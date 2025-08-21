@@ -1,4 +1,4 @@
-﻿// Dán toàn bộ code này vào file frmDashboard.cs
+// Dán toàn bộ code này vào file frmDashboard.cs
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -75,15 +75,15 @@ namespace StoreXManagerApp
 
                     if (reader.Read())
                     {
-                        lblTotalRevenue.Text = $"Doanh thu: {Convert.ToDecimal(reader["TotalRevenue"]).ToString("C0", viVn)}";
-                        lblTotalProfit.Text = $"Lợi nhuận: {Convert.ToDecimal(reader["TotalProfit"]).ToString("C0", viVn)}";
-                        lblTotalOrders.Text = $"Số đơn hàng: {reader["TotalOrders"]}";
+                        lblTotalRevenue.Text = $"Revenue: {Convert.ToDecimal(reader["TotalRevenue"]).ToString("C0", viVn)}";
+                        lblTotalProfit.Text = $"Profit: {Convert.ToDecimal(reader["TotalProfit"]).ToString("C0", viVn)}";
+                        lblTotalOrders.Text = $"Order Number: {reader["TotalOrders"]}";
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải dữ liệu KPI: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading KPI data: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -98,7 +98,7 @@ namespace StoreXManagerApp
                 chartTopProducts.Series.Clear();
 
                 // Tạo một Series mới cho biểu đồ
-                Series series = new Series("Số lượng bán ra")
+                Series series = new Series("Sales volume")
                 {
                     ChartType = SeriesChartType.Bar
                 };
@@ -135,7 +135,7 @@ namespace StoreXManagerApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải biểu đồ sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading product chart: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -148,7 +148,7 @@ namespace StoreXManagerApp
             {
                 chartRevenueByEmployee.Series.Clear();
 
-                Series series = new Series("Doanh thu")
+                Series series = new Series("Revenue")
                 {
                     ChartType = SeriesChartType.Pie,
                     IsValueShownAsLabel = true // Hiển thị giá trị trên lát bánh
@@ -190,7 +190,7 @@ namespace StoreXManagerApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải biểu đồ nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading employee chart: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -210,5 +210,25 @@ namespace StoreXManagerApp
         }
 
         #endregion
+
+        private void panelKpi_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void chartRevenueByEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalRevenue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chartTopProducts_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
