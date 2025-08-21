@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,7 +46,7 @@ namespace StoreXManagerApp.DTO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải danh sách nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading employee list: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -61,7 +61,8 @@ namespace StoreXManagerApp.DTO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải vai trò: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show("Error loading role: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -77,7 +78,7 @@ namespace StoreXManagerApp.DTO
                 chkIsActive.Checked = Convert.ToBoolean(row.Cells["IsActive"].Value);
 
                 txtPassword.Clear();
-                lblPassword.Text = "Mật khẩu (để trống nếu không đổi):";
+                lblPassword.Text = "Password (leave blank if not changed):";
             }
         }
 
@@ -89,7 +90,7 @@ namespace StoreXManagerApp.DTO
             txtPassword.Clear();
             cboRole.SelectedIndex = -1;
             chkIsActive.Checked = true;
-            lblPassword.Text = "Mật khẩu:";
+            lblPassword.Text = "Password: ";
             txtFullName.Focus();
         }
         #endregion
@@ -122,7 +123,7 @@ namespace StoreXManagerApp.DTO
                     success = _employeeBLL.InsertEmployee(employee);
                     if (success)
                     {
-                        MessageBox.Show("Thêm nhân viên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Added employee successfully!", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else // Cập nhật
@@ -131,7 +132,7 @@ namespace StoreXManagerApp.DTO
                     success = _employeeBLL.UpdateEmployee(employee);
                     if (success)
                     {
-                        MessageBox.Show("Cập nhật thông tin nhân viên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Employee information updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
@@ -144,11 +145,11 @@ namespace StoreXManagerApp.DTO
             }
             catch (SqlException ex) when (ex.Number == 2627) // Bắt lỗi trùng lặp từ DAL
             {
-                MessageBox.Show("Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.", "Lỗi trùng lặp", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The login name already exists. Please choose another one.", "Duplicate error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex) // Bắt lỗi nghiệp vụ từ BLL (ví dụ: thiếu thông tin)
             {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -156,11 +157,11 @@ namespace StoreXManagerApp.DTO
         {
             if (string.IsNullOrEmpty(txtEmployeeID.Text))
             {
-                MessageBox.Show("Vui lòng chọn một nhân viên để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select an employee to delete.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn vô hiệu hóa nhân viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Are you sure you want to disable this employee?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
@@ -171,22 +172,37 @@ namespace StoreXManagerApp.DTO
 
                     if (success)
                     {
-                        MessageBox.Show("Vô hiệu hóa nhân viên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Disable employee successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadEmployees();
                         ClearForm();
                     }
                     else
                     {
-                        MessageBox.Show("Thao tác thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Operation failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi nghiêm trọng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("An error occurred: " + ex.Message, "Fatal error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         #endregion
+
+        private void txtEmployeeID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFullName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
