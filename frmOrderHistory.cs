@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -164,6 +164,21 @@ namespace StoreXManagerApp
 
             // Tải lại toàn bộ đơn hàng
             LoadOrders();
+        }
+
+        private void cboCustomerFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dtpFromDate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
