@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,7 +58,7 @@ namespace StoreXManagerApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải danh sách khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading customer list: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -105,7 +105,7 @@ namespace StoreXManagerApp
                     success = _customerBLL.InsertCustomer(customer);
                     if (success)
                     {
-                        MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Customer added successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else // Cập nhật
@@ -114,7 +114,7 @@ namespace StoreXManagerApp
                     success = _customerBLL.UpdateCustomer(customer);
                     if (success)
                     {
-                        MessageBox.Show("Cập nhật thông tin khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Customer information updated successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
@@ -127,11 +127,11 @@ namespace StoreXManagerApp
             }
             catch (SqlException ex) when (ex.Number == 2627) // Bắt lỗi trùng lặp từ DAL
             {
-                MessageBox.Show("Số điện thoại hoặc Email đã tồn tại. Vui lòng kiểm tra lại.", "Lỗi trùng lặp", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Phone Number or Email already exists. Please check again.", "Duplicate error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex) // Bắt lỗi nghiệp vụ từ BLL
             {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -139,11 +139,11 @@ namespace StoreXManagerApp
         {
             if (string.IsNullOrEmpty(txtCustomerID.Text))
             {
-                MessageBox.Show("Vui lòng chọn một khách hàng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a customer to delete.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này? Hành động này không thể hoàn tác.", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this customer? This action cannot be undone.", "Confirm deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 try
@@ -151,14 +151,14 @@ namespace StoreXManagerApp
                     int customerId = Convert.ToInt32(txtCustomerID.Text);
                     if (_customerBLL.DeleteCustomer(customerId))
                     {
-                        MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Customer deleted successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadCustomers();
                         ClearForm();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi xóa khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error deleting customer: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -175,5 +175,20 @@ namespace StoreXManagerApp
             txtCustomerName.Focus();
         }
         #endregion
+
+        private void txtCustomerID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
