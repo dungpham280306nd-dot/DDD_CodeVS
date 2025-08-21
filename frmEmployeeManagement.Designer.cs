@@ -1,4 +1,4 @@
-﻿// Dán toàn bộ code này vào file frmEmployeeManagement.Designer.cs
+// Dán toàn bộ code này vào file frmEmployeeManagement.Designer.cs
 namespace StoreXManagerApp.DTO
 {
     partial class frmEmployeeManagement
@@ -38,8 +38,8 @@ namespace StoreXManagerApp.DTO
             // 
             this.dgvEmployees.AllowUserToAddRows = false;
             this.dgvEmployees.AllowUserToDeleteRows = false;
-            this.dgvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -47,6 +47,7 @@ namespace StoreXManagerApp.DTO
             this.dgvEmployees.MultiSelect = false;
             this.dgvEmployees.Name = "dgvEmployees";
             this.dgvEmployees.ReadOnly = true;
+            this.dgvEmployees.RowHeadersWidth = 51;
             this.dgvEmployees.RowTemplate.Height = 25;
             this.dgvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployees.Size = new System.Drawing.Size(538, 386);
@@ -55,7 +56,7 @@ namespace StoreXManagerApp.DTO
             // 
             // grpEmployeeDetails
             // 
-            this.grpEmployeeDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.grpEmployeeDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpEmployeeDetails.Controls.Add(this.btnDelete);
             this.grpEmployeeDetails.Controls.Add(this.btnSave);
@@ -76,7 +77,7 @@ namespace StoreXManagerApp.DTO
             this.grpEmployeeDetails.Size = new System.Drawing.Size(314, 386);
             this.grpEmployeeDetails.TabIndex = 11;
             this.grpEmployeeDetails.TabStop = false;
-            this.grpEmployeeDetails.Text = "Thông tin nhân viên";
+            this.grpEmployeeDetails.Text = "Employee Information";
             // 
             // btnDelete
             // 
@@ -85,7 +86,7 @@ namespace StoreXManagerApp.DTO
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(96, 33);
             this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "Xóa (Vô hiệu hóa)";
+            this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -96,7 +97,7 @@ namespace StoreXManagerApp.DTO
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 33);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Lưu Thay Đổi";
+            this.btnSave.Text = "Save change";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -106,7 +107,7 @@ namespace StoreXManagerApp.DTO
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(96, 33);
             this.btnAddNew.TabIndex = 5;
-            this.btnAddNew.Text = "Thêm Mới";
+            this.btnAddNew.Text = "Add";
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
@@ -117,9 +118,9 @@ namespace StoreXManagerApp.DTO
             this.chkIsActive.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkIsActive.Location = new System.Drawing.Point(109, 239);
             this.chkIsActive.Name = "chkIsActive";
-            this.chkIsActive.Size = new System.Drawing.Size(111, 19);
+            this.chkIsActive.Size = new System.Drawing.Size(66, 20);
             this.chkIsActive.TabIndex = 4;
-            this.chkIsActive.Text = "Đang hoạt động";
+            this.chkIsActive.Text = "Active";
             this.chkIsActive.UseVisualStyleBackColor = true;
             // 
             // cboRole
@@ -128,7 +129,7 @@ namespace StoreXManagerApp.DTO
             this.cboRole.FormattingEnabled = true;
             this.cboRole.Location = new System.Drawing.Point(109, 199);
             this.cboRole.Name = "cboRole";
-            this.cboRole.Size = new System.Drawing.Size(199, 23);
+            this.cboRole.Size = new System.Drawing.Size(199, 24);
             this.cboRole.TabIndex = 3;
             // 
             // lblRole
@@ -136,32 +137,33 @@ namespace StoreXManagerApp.DTO
             this.lblRole.AutoSize = true;
             this.lblRole.Location = new System.Drawing.Point(9, 202);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(44, 15);
+            this.lblRole.Size = new System.Drawing.Size(39, 16);
             this.lblRole.TabIndex = 8;
-            this.lblRole.Text = "Vai trò:";
+            this.lblRole.Text = "Role:";
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(109, 159);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(199, 23);
+            this.txtPassword.Size = new System.Drawing.Size(199, 22);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(9, 162);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(60, 15);
+            this.lblPassword.Size = new System.Drawing.Size(70, 16);
             this.lblPassword.TabIndex = 6;
-            this.lblPassword.Text = "Mật khẩu:";
+            this.lblPassword.Text = "Password:";
             // 
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(109, 119);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(199, 23);
+            this.txtUsername.Size = new System.Drawing.Size(199, 22);
             this.txtUsername.TabIndex = 1;
             // 
             // lblUsername
@@ -169,42 +171,44 @@ namespace StoreXManagerApp.DTO
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(9, 122);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(90, 15);
+            this.lblUsername.Size = new System.Drawing.Size(73, 16);
             this.lblUsername.TabIndex = 4;
-            this.lblUsername.Text = "Tên đăng nhập:";
+            this.lblUsername.Text = "Username:";
             // 
             // txtFullName
             // 
             this.txtFullName.Location = new System.Drawing.Point(109, 79);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(199, 23);
+            this.txtFullName.Size = new System.Drawing.Size(199, 22);
             this.txtFullName.TabIndex = 0;
+            this.txtFullName.TextChanged += new System.EventHandler(this.txtFullName_TextChanged);
             // 
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
             this.lblFullName.Location = new System.Drawing.Point(9, 82);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(61, 15);
+            this.lblFullName.Size = new System.Drawing.Size(68, 16);
             this.lblFullName.TabIndex = 2;
-            this.lblFullName.Text = "Họ và tên:";
+            this.lblFullName.Text = "Full name:";
             // 
             // txtEmployeeID
             // 
             this.txtEmployeeID.Location = new System.Drawing.Point(109, 39);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.ReadOnly = true;
-            this.txtEmployeeID.Size = new System.Drawing.Size(199, 23);
+            this.txtEmployeeID.Size = new System.Drawing.Size(199, 22);
             this.txtEmployeeID.TabIndex = 10;
+            this.txtEmployeeID.TextChanged += new System.EventHandler(this.txtEmployeeID_TextChanged);
             // 
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
             this.lblEmployeeID.Location = new System.Drawing.Point(9, 42);
             this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(46, 15);
+            this.lblEmployeeID.Size = new System.Drawing.Size(108, 16);
             this.lblEmployeeID.TabIndex = 0;
-            this.lblEmployeeID.Text = "Mã NV:";
+            this.lblEmployeeID.Text = "Employee Code:";
             // 
             // frmEmployeeManagement
             // 
@@ -212,13 +216,13 @@ namespace StoreXManagerApp.DTO
             this.Controls.Add(this.grpEmployeeDetails);
             this.Controls.Add(this.dgvEmployees);
             this.Name = "frmEmployeeManagement";
-            this.Text = "Quản lý Nhân viên";
+            this.Text = "Personnel management";
             this.Load += new System.EventHandler(this.frmEmployeeManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.grpEmployeeDetails.ResumeLayout(false);
             this.grpEmployeeDetails.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
+
         }
         #endregion
 
