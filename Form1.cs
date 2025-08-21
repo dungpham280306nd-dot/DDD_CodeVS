@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,7 +44,7 @@ namespace StoreXManagerApp
         private void ApplyAuthorization()
         {
             // Chào mừng người dùng ở thanh tiêu đề của Form
-            this.Text = $"Quản lý Bán hàng - StoreX (Xin chào, {CurrentUser.FullName})";
+            this.Text = $"Sales Management - StoreX (Hello, {CurrentUser.FullName})";
 
             // --- BƯỚC 1: MẶC ĐỊNH ẨN TẤT CẢ CÁC MENU CẦN PHÂN QUYỀN ---
             quảnLýToolStripMenuItem.Visible = false;
@@ -83,7 +83,7 @@ namespace StoreXManagerApp
                 // SỬA ĐỔI QUAN TRỌNG: Vô hiệu hóa chức năng bán hàng
                 grpSalesControls.Enabled = false;
                 // Có thể thêm một Label thông báo
-                lblNotification.Text = "Chế độ Quản lý Kho. Chức năng bán hàng đã bị vô hiệu hóa.";
+                lblNotification.Text = "Inventory Management Mode. Sales function has been disabled.";
                 lblNotification.Visible = true;
             }
         }
@@ -103,7 +103,7 @@ namespace StoreXManagerApp
                 cboCustomers.DisplayMember = "CustomerName";
                 cboCustomers.ValueMember = "CustomerID";
             }
-            catch (Exception ex) { MessageBox.Show("Lỗi tải khách hàng: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show("Error download client: " + ex.Message); }
         }
 
         private void LoadEmployees()
@@ -114,7 +114,7 @@ namespace StoreXManagerApp
                 cboEmployees.DisplayMember = "FullName";
                 cboEmployees.ValueMember = "EmployeeID";
             }
-            catch (Exception ex) { MessageBox.Show("Lỗi tải nhân viên: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show("Error loading staff: " + ex.Message); }
         }
 
         private void LoadProducts(string searchTerm = "")
@@ -123,7 +123,7 @@ namespace StoreXManagerApp
             {
                 dgvProducts.DataSource = _productBLL.GetAvailableProducts(searchTerm);
             }
-            catch (Exception ex) { MessageBox.Show("Lỗi tải sản phẩm: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show("Product loading error: " + ex.Message); }
         }
 
         #endregion
@@ -150,7 +150,7 @@ namespace StoreXManagerApp
             {
                 total = Convert.ToDecimal(cartTable.Compute("SUM(LineTotal)", string.Empty));
             }
-            lblTotalAmount.Text = $"Tổng tiền: {total:C0}";
+            lblTotalAmount.Text = $"Total amount: {total:C0}";
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
@@ -159,7 +159,7 @@ namespace StoreXManagerApp
             DataGridViewRow row = dgvProducts.SelectedRows[0];
             int stock = Convert.ToInt32(row.Cells["Stock"].Value);
             int quantityToAdd = (int)numQuantity.Value;
-            if (quantityToAdd > stock) { MessageBox.Show("Hết hàng!"); return; }
+            if (quantityToAdd > stock) { MessageBox.Show("Out of stock!"); return; }
 
             int productID = Convert.ToInt32(row.Cells["ProductID"].Value);
             DataRow existingRow = cartTable.Select($"ProductID = {productID}").FirstOrDefault();
@@ -194,7 +194,7 @@ namespace StoreXManagerApp
         {
             if (cboCustomers.SelectedValue == null || cboEmployees.SelectedValue == null || cartTable.Rows.Count == 0)
             {
-                MessageBox.Show("Vui lòng điền đủ thông tin đơn hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fill in the order information completely.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -218,13 +218,13 @@ namespace StoreXManagerApp
 
                 int newOrderID = _orderBLL.CreateOrder(newOrder);
 
-                MessageBox.Show($"Tạo đơn hàng thành công! Mã đơn hàng: {newOrderID}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Order created successfully! Order code:{newOrderID}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cartTable.Clear();
                 LoadProducts();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tạo đơn hàng: " + ex.Message, "Lỗi nghiêm trọng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error creating order: " + ex.Message, "Fatal error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -244,7 +244,7 @@ namespace StoreXManagerApp
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to exit?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -284,5 +284,15 @@ namespace StoreXManagerApp
         }
 
         #endregion
+
+        private void cboEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
