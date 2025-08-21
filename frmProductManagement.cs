@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,7 +69,7 @@ namespace StoreXManagerApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải danh sách sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading product list: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -84,7 +84,7 @@ namespace StoreXManagerApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải danh mục: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading catalog: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             try
@@ -95,7 +95,7 @@ namespace StoreXManagerApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải nhà cung cấp: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading Supplier: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -133,7 +133,7 @@ namespace StoreXManagerApp
         {
             if (string.IsNullOrWhiteSpace(txtProductName.Text))
             {
-                MessageBox.Show("Tên sản phẩm không được để trống.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Product name cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -156,16 +156,16 @@ namespace StoreXManagerApp
                 if (string.IsNullOrEmpty(txtProductID.Text)) // Thêm mới
                 {
                     success = _productBLL.InsertProduct(product);
-                    message = success ? "Thêm sản phẩm thành công!" : "Thêm sản phẩm thất bại.";
+                    message = success ? "Add product successfully!" : "Add product failed.";
                 }
                 else // Cập nhật
                 {
                     product.ProductID = Convert.ToInt32(txtProductID.Text);
                     success = _productBLL.UpdateProduct(product);
-                    message = success ? "Cập nhật sản phẩm thành công!" : "Cập nhật sản phẩm thất bại.";
+                    message = success ? "Product update successful!" : "Product update failed.";
                 }
 
-                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                MessageBox.Show(message, "Notification", MessageBoxButtons.OK, success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
 
                 if (success)
                 {
@@ -175,7 +175,7 @@ namespace StoreXManagerApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -183,11 +183,11 @@ namespace StoreXManagerApp
         {
             if (string.IsNullOrEmpty(txtProductID.Text))
             {
-                MessageBox.Show("Vui lòng chọn một sản phẩm để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a product to delete.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn ngừng kinh doanh sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to stop selling this product?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 try
@@ -196,18 +196,18 @@ namespace StoreXManagerApp
                     bool success = _productBLL.SoftDeleteProduct(productId);
                     if (success)
                     {
-                        MessageBox.Show("Đã ngừng kinh doanh sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Product discontinued successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadProducts();
                         ClearForm();
                     }
                     else
                     {
-                        MessageBox.Show("Thao tác thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Operation failed.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("An error occurred: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -229,5 +229,20 @@ namespace StoreXManagerApp
         }
 
         #endregion
+
+        private void txtProductID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
