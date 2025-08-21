@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +31,7 @@ namespace StoreXManagerApp
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter your username and password.", "Missing information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -68,18 +68,18 @@ namespace StoreXManagerApp
                         }
                         else
                         {
-                            MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác.", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Incorrect username or password.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else // Không tìm thấy user hoặc user không hoạt động
                     {
-                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác.", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Incorrect username or password.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Đã xảy ra lỗi kết nối CSDL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred connecting to the database: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -103,6 +103,16 @@ namespace StoreXManagerApp
                 if (enteredHash[i] != storedHash[i]) return false;
             }
             return true;
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
