@@ -1,4 +1,4 @@
-﻿// Dán toàn bộ code này vào file Form1.Designer.cs
+// Dán toàn bộ code này vào file Form1.Designer.cs
 namespace StoreXManagerApp
 {
     partial class Form1
@@ -51,13 +51,14 @@ namespace StoreXManagerApp
             this.lblNotification = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.grpSalesControls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.quảnLýToolStripMenuItem,
@@ -65,7 +66,8 @@ namespace StoreXManagerApp
             this.báoCáoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(815, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(931, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,25 +78,25 @@ namespace StoreXManagerApp
             this.toolStripSeparator1,
             this.thoátToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng &xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(126, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.thoátToolStripMenuItem.Text = "&Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
@@ -105,28 +107,29 @@ namespace StoreXManagerApp
             this.quảnLýKháchHàngToolStripMenuItem,
             this.quảnLýNhânViênToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.quảnLýToolStripMenuItem.Text = "Quản lý";
+            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.quảnLýToolStripMenuItem.Text = "Manage";
+            this.quảnLýToolStripMenuItem.Click += new System.EventHandler(this.quảnLýToolStripMenuItem_Click);
             // 
             // quảnLýSảnPhẩmToolStripMenuItem
             // 
             this.quảnLýSảnPhẩmToolStripMenuItem.Name = "quảnLýSảnPhẩmToolStripMenuItem";
-            this.quảnLýSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.quảnLýSảnPhẩmToolStripMenuItem.Text = "Quản lý Sản phẩm";
+            this.quảnLýSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.quảnLýSảnPhẩmToolStripMenuItem.Text = "Product Management";
             this.quảnLýSảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.quảnLýSảnPhẩmToolStripMenuItem_Click);
             // 
             // quảnLýKháchHàngToolStripMenuItem
             // 
             this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
-            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản lý Khách hàng";
+            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.quảnLýKháchHàngToolStripMenuItem.Text = "Customer Management";
             this.quảnLýKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýKháchHàngToolStripMenuItem_Click);
             // 
             // quảnLýNhânViênToolStripMenuItem
             // 
             this.quảnLýNhânViênToolStripMenuItem.Name = "quảnLýNhânViênToolStripMenuItem";
-            this.quảnLýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.quảnLýNhânViênToolStripMenuItem.Text = "Quản lý Nhân viên";
+            this.quảnLýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.quảnLýNhânViênToolStripMenuItem.Text = "Employee management";
             this.quảnLýNhânViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýNhânViênToolStripMenuItem_Click);
             // 
             // nghiệpVụToolStripMenuItem
@@ -134,13 +137,13 @@ namespace StoreXManagerApp
             this.nghiệpVụToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lịchSửĐơnHàngToolStripMenuItem});
             this.nghiệpVụToolStripMenuItem.Name = "nghiệpVụToolStripMenuItem";
-            this.nghiệpVụToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.nghiệpVụToolStripMenuItem.Text = "Nghiệp vụ";
+            this.nghiệpVụToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.nghiệpVụToolStripMenuItem.Text = "History";
             // 
             // lịchSửĐơnHàngToolStripMenuItem
             // 
             this.lịchSửĐơnHàngToolStripMenuItem.Name = "lịchSửĐơnHàngToolStripMenuItem";
-            this.lịchSửĐơnHàngToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.lịchSửĐơnHàngToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.lịchSửĐơnHàngToolStripMenuItem.Text = "Lịch sử đơn hàng";
             this.lịchSửĐơnHàngToolStripMenuItem.Click += new System.EventHandler(this.lịchSửĐơnHàngToolStripMenuItem_Click);
             // 
@@ -149,20 +152,20 @@ namespace StoreXManagerApp
             this.báoCáoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bảngĐiềuKhiểnDashboardToolStripMenuItem});
             this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
-            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.báoCáoToolStripMenuItem.Text = "Báo cáo";
+            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.báoCáoToolStripMenuItem.Text = "Report";
             // 
             // bảngĐiềuKhiểnDashboardToolStripMenuItem
             // 
             this.bảngĐiềuKhiểnDashboardToolStripMenuItem.Name = "bảngĐiềuKhiểnDashboardToolStripMenuItem";
-            this.bảngĐiềuKhiểnDashboardToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.bảngĐiềuKhiểnDashboardToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
             this.bảngĐiềuKhiểnDashboardToolStripMenuItem.Text = "Bảng điều khiển (Dashboard)";
             this.bảngĐiềuKhiểnDashboardToolStripMenuItem.Click += new System.EventHandler(this.bảngĐiềuKhiểnDashboardToolStripMenuItem_Click);
             // 
             // grpSalesControls
             // 
-            this.grpSalesControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.grpSalesControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpSalesControls.Controls.Add(this.lblTotalAmount);
             this.grpSalesControls.Controls.Add(this.btnRemoveFromCart);
@@ -180,9 +183,9 @@ namespace StoreXManagerApp
             this.grpSalesControls.Controls.Add(this.lblEmployee);
             this.grpSalesControls.Controls.Add(this.cboCustomers);
             this.grpSalesControls.Controls.Add(this.lblCustomer);
-            this.grpSalesControls.Location = new System.Drawing.Point(12, 53);
+            this.grpSalesControls.Location = new System.Drawing.Point(14, 57);
             this.grpSalesControls.Name = "grpSalesControls";
-            this.grpSalesControls.Size = new System.Drawing.Size(791, 549);
+            this.grpSalesControls.Size = new System.Drawing.Size(904, 586);
             this.grpSalesControls.TabIndex = 1;
             this.grpSalesControls.TabStop = false;
             // 
@@ -191,50 +194,50 @@ namespace StoreXManagerApp
             this.lblTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblTotalAmount.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblTotalAmount.Location = new System.Drawing.Point(338, 504);
+            this.lblTotalAmount.Location = new System.Drawing.Point(386, 538);
             this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new System.Drawing.Size(279, 28);
+            this.lblTotalAmount.Size = new System.Drawing.Size(319, 30);
             this.lblTotalAmount.TabIndex = 16;
-            this.lblTotalAmount.Text = "Tổng tiền: 0 VND";
+            this.lblTotalAmount.Text = "Total Amount: 0 VND";
             this.lblTotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnRemoveFromCart
             // 
             this.btnRemoveFromCart.BackColor = System.Drawing.Color.MistyRose;
-            this.btnRemoveFromCart.Location = new System.Drawing.Point(113, 311);
+            this.btnRemoveFromCart.Location = new System.Drawing.Point(153, 334);
             this.btnRemoveFromCart.Name = "btnRemoveFromCart";
-            this.btnRemoveFromCart.Size = new System.Drawing.Size(111, 25);
+            this.btnRemoveFromCart.Size = new System.Drawing.Size(127, 27);
             this.btnRemoveFromCart.TabIndex = 8;
-            this.btnRemoveFromCart.Text = "Xóa khỏi giỏ";
+            this.btnRemoveFromCart.Text = "Remove from cart";
             this.btnRemoveFromCart.UseVisualStyleBackColor = false;
             this.btnRemoveFromCart.Click += new System.EventHandler(this.btnRemoveFromCart_Click);
             // 
             // txtProductSearch
             // 
-            this.txtProductSearch.Location = new System.Drawing.Point(101, 84);
+            this.txtProductSearch.Location = new System.Drawing.Point(115, 90);
             this.txtProductSearch.Name = "txtProductSearch";
-            this.txtProductSearch.Size = new System.Drawing.Size(359, 23);
+            this.txtProductSearch.Size = new System.Drawing.Size(410, 22);
             this.txtProductSearch.TabIndex = 4;
             this.txtProductSearch.TextChanged += new System.EventHandler(this.txtProductSearch_TextChanged);
             // 
             // lblProductSearch
             // 
             this.lblProductSearch.AutoSize = true;
-            this.lblProductSearch.Location = new System.Drawing.Point(6, 87);
+            this.lblProductSearch.Location = new System.Drawing.Point(7, 93);
             this.lblProductSearch.Name = "lblProductSearch";
-            this.lblProductSearch.Size = new System.Drawing.Size(89, 15);
+            this.lblProductSearch.Size = new System.Drawing.Size(91, 16);
             this.lblProductSearch.TabIndex = 13;
-            this.lblProductSearch.Text = "Tìm sản phẩm:";
+            this.lblProductSearch.Text = "Find products:";
             // 
             // lblCart
             // 
             this.lblCart.AutoSize = true;
             this.lblCart.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblCart.Location = new System.Drawing.Point(6, 319);
+            this.lblCart.Location = new System.Drawing.Point(7, 340);
             this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(68, 17);
+            this.lblCart.Size = new System.Drawing.Size(127, 23);
             this.lblCart.TabIndex = 11;
-            this.lblCart.Text = "Giỏ Hàng";
+            this.lblCart.Text = "Shopping Cart";
             // 
             // btnCreateOrder
             // 
@@ -242,11 +245,11 @@ namespace StoreXManagerApp
             this.btnCreateOrder.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnCreateOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnCreateOrder.ForeColor = System.Drawing.Color.White;
-            this.btnCreateOrder.Location = new System.Drawing.Point(623, 497);
+            this.btnCreateOrder.Location = new System.Drawing.Point(712, 530);
             this.btnCreateOrder.Name = "btnCreateOrder";
-            this.btnCreateOrder.Size = new System.Drawing.Size(150, 42);
+            this.btnCreateOrder.Size = new System.Drawing.Size(171, 45);
             this.btnCreateOrder.TabIndex = 10;
-            this.btnCreateOrder.Text = "Tạo Đơn Hàng";
+            this.btnCreateOrder.Text = "Create Order";
             this.btnCreateOrder.UseVisualStyleBackColor = false;
             this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
@@ -254,142 +257,153 @@ namespace StoreXManagerApp
             // 
             this.dgvCart.AllowUserToAddRows = false;
             this.dgvCart.AllowUserToDeleteRows = false;
-            this.dgvCart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvCart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCart.Location = new System.Drawing.Point(6, 339);
+            this.dgvCart.Location = new System.Drawing.Point(7, 362);
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
+            this.dgvCart.RowHeadersWidth = 51;
             this.dgvCart.RowTemplate.Height = 25;
             this.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCart.Size = new System.Drawing.Size(767, 152);
+            this.dgvCart.Size = new System.Drawing.Size(877, 162);
             this.dgvCart.TabIndex = 9;
             // 
             // btnAddToCart
             // 
             this.btnAddToCart.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnAddToCart.Location = new System.Drawing.Point(159, 277);
+            this.btnAddToCart.Location = new System.Drawing.Point(182, 295);
             this.btnAddToCart.Name = "btnAddToCart";
-            this.btnAddToCart.Size = new System.Drawing.Size(170, 31);
+            this.btnAddToCart.Size = new System.Drawing.Size(194, 33);
             this.btnAddToCart.TabIndex = 7;
-            this.btnAddToCart.Text = "Thêm vào giỏ hàng";
+            this.btnAddToCart.Text = "Add to cart";
             this.btnAddToCart.UseVisualStyleBackColor = true;
             this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // numQuantity
             // 
-            this.numQuantity.Location = new System.Drawing.Point(69, 281);
-            this.numQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.numQuantity.Location = new System.Drawing.Point(79, 300);
+            this.numQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numQuantity.Name = "numQuantity";
-            this.numQuantity.Size = new System.Drawing.Size(75, 23);
+            this.numQuantity.Size = new System.Drawing.Size(86, 22);
             this.numQuantity.TabIndex = 6;
-            this.numQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            this.numQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(6, 283);
+            this.lblQuantity.Location = new System.Drawing.Point(7, 302);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(57, 15);
+            this.lblQuantity.Size = new System.Drawing.Size(55, 16);
             this.lblQuantity.TabIndex = 6;
-            this.lblQuantity.Text = "Số lượng:";
+            this.lblQuantity.Text = "Quantity";
             // 
             // dgvProducts
             // 
             this.dgvProducts.AllowUserToAddRows = false;
             this.dgvProducts.AllowUserToDeleteRows = false;
-            this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(6, 113);
+            this.dgvProducts.Location = new System.Drawing.Point(7, 121);
             this.dgvProducts.MultiSelect = false;
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.RowHeadersWidth = 51;
             this.dgvProducts.RowTemplate.Height = 25;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducts.Size = new System.Drawing.Size(767, 158);
+            this.dgvProducts.Size = new System.Drawing.Size(877, 169);
             this.dgvProducts.TabIndex = 5;
             // 
             // lblProducts
             // 
             this.lblProducts.AutoSize = true;
             this.lblProducts.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblProducts.Location = new System.Drawing.Point(6, 61);
+            this.lblProducts.Location = new System.Drawing.Point(7, 65);
             this.lblProducts.Name = "lblProducts";
-            this.lblProducts.Size = new System.Drawing.Size(138, 17);
+            this.lblProducts.Size = new System.Drawing.Size(106, 23);
             this.lblProducts.TabIndex = 4;
-            this.lblProducts.Text = "Danh sách sản phẩm";
+            this.lblProducts.Text = "Product List";
             // 
             // cboEmployees
             // 
             this.cboEmployees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEmployees.FormattingEnabled = true;
-            this.cboEmployees.Location = new System.Drawing.Point(525, 16);
+            this.cboEmployees.Location = new System.Drawing.Point(600, 17);
             this.cboEmployees.Name = "cboEmployees";
-            this.cboEmployees.Size = new System.Drawing.Size(248, 23);
+            this.cboEmployees.Size = new System.Drawing.Size(283, 24);
             this.cboEmployees.TabIndex = 3;
+            this.cboEmployees.SelectedIndexChanged += new System.EventHandler(this.cboEmployees_SelectedIndexChanged);
             // 
             // lblEmployee
             // 
             this.lblEmployee.AutoSize = true;
-            this.lblEmployee.Location = new System.Drawing.Point(397, 19);
+            this.lblEmployee.Location = new System.Drawing.Point(454, 20);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(122, 15);
+            this.lblEmployee.Size = new System.Drawing.Size(82, 16);
             this.lblEmployee.TabIndex = 2;
-            this.lblEmployee.Text = "Nhân viên bán hàng:";
+            this.lblEmployee.Text = "Sales agent:";
             // 
             // cboCustomers
             // 
             this.cboCustomers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCustomers.FormattingEnabled = true;
-            this.cboCustomers.Location = new System.Drawing.Point(121, 16);
+            this.cboCustomers.Location = new System.Drawing.Point(138, 17);
             this.cboCustomers.Name = "cboCustomers";
-            this.cboCustomers.Size = new System.Drawing.Size(248, 23);
+            this.cboCustomers.Size = new System.Drawing.Size(283, 24);
             this.cboCustomers.TabIndex = 2;
             // 
             // lblCustomer
             // 
             this.lblCustomer.AutoSize = true;
-            this.lblCustomer.Location = new System.Drawing.Point(6, 19);
+            this.lblCustomer.Location = new System.Drawing.Point(7, 20);
             this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(109, 15);
+            this.lblCustomer.Size = new System.Drawing.Size(106, 16);
             this.lblCustomer.TabIndex = 0;
-            this.lblCustomer.Text = "Chọn khách hàng:";
+            this.lblCustomer.Text = "Select customer:";
             // 
             // lblNotification
             // 
             this.lblNotification.AutoSize = true;
             this.lblNotification.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblNotification.ForeColor = System.Drawing.Color.Red;
-            this.lblNotification.Location = new System.Drawing.Point(230, 30);
+            this.lblNotification.Location = new System.Drawing.Point(263, 32);
             this.lblNotification.Name = "lblNotification";
-            this.lblNotification.Size = new System.Drawing.Size(121, 17);
+            this.lblNotification.Size = new System.Drawing.Size(154, 23);
             this.lblNotification.TabIndex = 14;
             this.lblNotification.Text = "Notification Label";
             this.lblNotification.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 614);
+            this.ClientSize = new System.Drawing.Size(931, 655);
             this.Controls.Add(this.lblNotification);
             this.Controls.Add(this.grpSalesControls);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Quản lý Bán hàng - StoreX";
+            this.Text = "Admin- StoreX";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpSalesControls.ResumeLayout(false);
             this.grpSalesControls.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,6 +444,3 @@ namespace StoreXManagerApp
         private System.Windows.Forms.Label lblNotification;
     }
 }
-
-
-
